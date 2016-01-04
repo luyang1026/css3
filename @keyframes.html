@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	</script>
+	<style>
+		@keyframes go{
+			to {
+				transform: rotate(800deg);
+			}
+		}
+		div{
+			width: 400px;
+			height: 400px;
+			font-size: 300px;
+			text-align: center;
+			line-height: 400px;
+			animation-name: go;
+			animation-duration: 2s;
+			animation-iteration-count: 1;
+			animation-direction: alternate;
+			animation-fill-mode:forwards;
+			animation-timing-function: ease-out;
+			animation-play-state:paused;
+			background-color: red;
+		}
+	</style>
+	<script>
+		var bOk = true
+		function turn(){
+			var r = div1.style;
+			if(bOk)r.animationPlayState = 'running';
+			else r.animationPlayState = 'paused';
+			bOk = !bOk;
+		}
+	</script>
+</head>
+<body>
+	<div id="div1">1</div>
+	<input type="button" value="turn" onclick="turn.call();" id="a">
+</body>
+</html>
